@@ -1,0 +1,11 @@
+za/connect/cashdispense/web/rest/UserRestController.class
+za/connect/cashdispense/domain/CashDispenseResponsePage.class
+za/connect/cashdispense/domain/UserResponse.class
+za/connect/cashdispense/services/UserService.class
+za/connect/cashdispense/services/CashDispenseService.class
+za/connect/cashdispense/CashDispenseApplication.class
+za/connect/cashdispense/persistance/repository/UserRepository.class
+za/connect/cashdispense/domain/CashDispenseResponse.class
+za/connect/cashdispense/web/rest/DispenseRestController.class
+za/connect/cashdispense/configuration/ApplicationConfigurations.class
+za/connect/cashdispense/persistance/entity/UserEntity.class
