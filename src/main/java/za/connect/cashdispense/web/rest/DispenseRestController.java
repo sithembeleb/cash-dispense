@@ -2,14 +2,9 @@ package za.connect.cashdispense.web.rest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import za.connect.cashdispense.domain.CashDispenseResponse;
 import za.connect.cashdispense.domain.CashDispenseResponsePage;
 import za.connect.cashdispense.services.CashDispenseService;
-
-import javax.xml.bind.ValidationException;
-import java.util.List;
 
 import static java.lang.String.format;
 

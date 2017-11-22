@@ -1,6 +1,5 @@
 package za.connect.cashdispense.services;
 
-import org.omg.PortableInterceptor.SUCCESSFUL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.connect.cashdispense.domain.UserResponse;

@@ -1,4 +1,4 @@
-package za.fnb.connect.cashdespense;
+package za.connect.cashdespense;
 
 import org.junit.Before;
 import org.junit.Test;
