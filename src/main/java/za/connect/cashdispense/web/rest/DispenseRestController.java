@@ -27,7 +27,7 @@ public class DispenseRestController {
     @RequestMapping(value = "/calculate", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<CashDispenseResponsePage> getBreakdown(@RequestParam("randNote") final String randNote,
                                                                   @RequestParam("amountDue") final String amountDue) {
-        logger.info(format("processing request with randNote %s and amountDue %s", randNote, amountDue));
+        logger.info("processing request with randNote {} and amountDue {}", randNote, amountDue);
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.setAccessControlAllowOrigin("http://localhost:4200");
         CashDispenseResponsePage cashDispenseResponsePage =
