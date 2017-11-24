@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import za.connect.cashdispense.domain.CashDispenseResponsePage;
 import za.connect.cashdispense.services.CashDispenseService;
 
-import static java.lang.String.format;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
