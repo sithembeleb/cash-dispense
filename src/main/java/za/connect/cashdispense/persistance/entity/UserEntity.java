@@ -1,8 +1,5 @@
 package za.connect.cashdispense.persistance.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.SEQUENCE;

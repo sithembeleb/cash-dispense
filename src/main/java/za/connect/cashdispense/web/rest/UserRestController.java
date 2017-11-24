@@ -1,6 +1,10 @@
 package za.connect.cashdispense.web.rest;
 
+import com.sun.org.apache.xml.internal.utils.URI;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,18 +24,22 @@ public class UserRestController {
     @RequestMapping(value = "/register",
             method = POST)
     private UserResponse registerUser(
-            @RequestParam(required = true, name = "name") final String name,
-            @RequestParam(required = true, name = "password") final String password,
-            @RequestParam(required = true, name = "username") final String username){
-            return userService.saveNewUser(name, password, username);
+            @RequestParam( name = "name") final String name,
+            @RequestParam( name = "password") final String password,
+            @RequestParam( name = "username") final String username) {
+        return userService.saveNewUser(name, password, username);
     }
 
     @RequestMapping(value = "/authenticate",
             method = GET)
-    private UserResponse authenticateUser(
-            @RequestParam(required = true, name = "password") final String password,
-            @RequestParam(required = true, name = "username") final String username) {
-            return userService.authenticateUser(username.trim(), password.trim());
+    private ResponseEntity<UserResponse> authenticateUser(
+            @RequestParam( name = "password") final String password,
+            @RequestParam( name = "username") final String username) {
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.setAccessControlAllowOrigin("http://localhost:4200");
+        return new ResponseEntity<UserResponse>(userService.authenticateUser(username.trim(), password.trim()),
+                responseHeaders, HttpStatus.OK);
+
     }
 
 }

@@ -38,14 +38,14 @@ public class CashDispenseService {
 
             for (Double cashDomination : filteredList) {
                 Double numberOfDenominations = remainder / cashDomination;
-                if (numberOfDenominations.intValue() > 0) {
+                if (numberOfDenominations >= 0.00) {
                     denominationBreakdown.add(new CashDispenseResponse(formatter.format(cashDomination), numberOfDenominations.intValue()));
                     remainder = remainder % cashDomination;
                 }
             }
         } catch (ValidationException e) {
-            return new CashDispenseResponsePage(BAD_REQUEST.toString(), BAD_REQUEST.getReasonPhrase(), e.getMessage(), new ArrayList<>());
+            return new CashDispenseResponsePage( new ArrayList<>());
         }
-        return new CashDispenseResponsePage(OK.toString(), null, null, denominationBreakdown);
+        return new CashDispenseResponsePage(denominationBreakdown.stream().filter(y -> y.getNumberOfCashDenomination() > 0).collect(Collectors.toList()));
     }
 }

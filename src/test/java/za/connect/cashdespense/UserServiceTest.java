@@ -34,8 +34,8 @@ public class UserServiceTest {
     @DirtiesContext
     public void when_valid_parameters_expect_successful_user_authentication(){
         userService.saveNewUser("testName", "password", "testUserName");
-        userService.authenticateUser("Sthe", "password");
-        System.out.println(userRepository.findAll().size());
+        userService.authenticateUser("testName", "password");
+        assertTrue("Repository must return 1 record ", userRepository.findAll().size() == 1);
     }
 
 }
