@@ -7,6 +7,9 @@ import za.connect.cashdispense.domain.CashDispenseResponsePage;
 import za.connect.cashdispense.domain.CashDispenseResponse;
 
 import javax.xml.bind.ValidationException;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -17,35 +20,45 @@ import static org.springframework.http.HttpStatus.OK;
 @Service
 public class CashDispenseService {
 
-    final static Double[] validCashDenominations = {100.00, 50.00, 20.00, 10.00, 5.00, 2.00, 1.00, 0.50, 0.20, 0.10, 0.05};
+    final static BigDecimal[] validCashDenominations = {new BigDecimal(100.00), new BigDecimal(50.00), new BigDecimal(20.00),
+            new BigDecimal(10.00), new BigDecimal(5.00), new BigDecimal(2.00), new BigDecimal(1.00), new BigDecimal(0.50),
+            new BigDecimal(0.20), new BigDecimal(0.10), new BigDecimal(0.05)};
     final static Logger logger = LoggerFactory.getLogger(CashDispenseService.class);
 
-    public CashDispenseResponsePage getDispensedBreakdown(final double randNote, final double amountDue) {
+    public CashDispenseResponsePage getDispensedBreakdown(final BigDecimal randNote, final BigDecimal amountDue) {
         List<CashDispenseResponse> denominationBreakdown = new ArrayList<>();
-        double change = randNote - amountDue;
-        double remainder = change;
+        BigDecimal change = randNote.subtract(amountDue);
+        BigDecimal remainder = change;
+
+
+        List<BigDecimal> validDenominations = Arrays.asList(validCashDenominations);
+        List<BigDecimal> filteredList = validDenominations.stream().filter(denomination -> denomination.compareTo(change) == -1).collect(Collectors.toList());
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("en", "ZA"));
 
         logger.info("processing breakdown for {}", change);
 
         try {
-            if (change < 0) {
+            if (change.compareTo(BigDecimal.ZERO) == -1) {
                 throw new ValidationException("Amount due must be less that randNote");
             }
 
-            List<Double> validDenominations = Arrays.asList(validCashDenominations);
-            List<Double> filteredList = validDenominations.stream().filter(y -> y.compareTo(change) < 0).collect(Collectors.toList());
-            NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("en", "ZA"));
+            if (!validDenominations.stream().filter(denomination -> denomination.compareTo(BigDecimal.TEN) == 1)
+                    .collect(Collectors.toList()).contains(randNote)) {
+                throw new ValidationException("Please provide a valid note denomination");
+            }
 
-            for (Double cashDomination : filteredList) {
-                Double numberOfDenominations = remainder / cashDomination;
-                if (numberOfDenominations >= 0.00) {
+            for (BigDecimal cashDomination : filteredList) {
+                BigDecimal numberOfDenominations = remainder.compareTo(new BigDecimal("0.50")) == -1 ?
+                        remainder.divide(cashDomination, 2, RoundingMode.HALF_UP) : remainder.divide(cashDomination);
+                if (numberOfDenominations.intValue() >= 1) {
                     denominationBreakdown.add(new CashDispenseResponse(formatter.format(cashDomination), numberOfDenominations.intValue()));
-                    remainder = remainder % cashDomination;
+                    remainder = remainder.remainder(cashDomination);
                 }
             }
         } catch (ValidationException e) {
-            return new CashDispenseResponsePage( new ArrayList<>());
+            logger.error(e.getMessage());
+            return new CashDispenseResponsePage(new ArrayList<>(), e.getMessage(), BAD_REQUEST.toString());
         }
-        return new CashDispenseResponsePage(denominationBreakdown.stream().filter(y -> y.getNumberOfCashDenomination() > 0).collect(Collectors.toList()));
+        return new CashDispenseResponsePage(denominationBreakdown, null, null);
     }
 }

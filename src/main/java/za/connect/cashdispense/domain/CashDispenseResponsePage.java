@@ -11,8 +11,12 @@ public class CashDispenseResponsePage {
 
     @JsonProperty
     private List<CashDispenseResponse> cashBreakdown;
+    private String status;
+    private String message;
 
-    public CashDispenseResponsePage(List<CashDispenseResponse> cashBreakdown) {
+    public CashDispenseResponsePage(final List<CashDispenseResponse> cashBreakdown, final String message, final String status) {
         this.cashBreakdown = cashBreakdown;
+        this.status = status;
+        this.message = message;
     }
 }

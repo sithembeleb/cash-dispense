@@ -6,8 +6,12 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import za.connect.cashdispense.domain.CashDispenseResponse;
 import za.connect.cashdispense.domain.CashDispenseResponsePage;
 import za.connect.cashdispense.services.CashDispenseService;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -25,12 +29,12 @@ public class DispenseRestController {
 
     @RequestMapping(value = "/calculate", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<CashDispenseResponsePage> getBreakdown(@RequestParam("randNote") final String randNote,
-                                                                  @RequestParam("amountDue") final String amountDue) {
+                                                                   @RequestParam("amountDue") final String amountDue) {
         logger.info("processing request with randNote {} and amountDue {}", randNote, amountDue);
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.setAccessControlAllowOrigin("http://localhost:4200");
         CashDispenseResponsePage cashDispenseResponsePage =
-        cashDispenseService.getDispensedBreakdown(Double.valueOf(randNote), Double.valueOf(amountDue));
+        cashDispenseService.getDispensedBreakdown(new BigDecimal(randNote), new BigDecimal(amountDue));
 
         return new ResponseEntity<CashDispenseResponsePage>(
                 cashDispenseResponsePage, responseHeaders, HttpStatus.OK);
