@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b1684bc-10e4-4af7-9461-9cc3496d56bb" name="Default" comment="changed dataType from Double to BigDecimal">
+    <list default="true" id="0b1684bc-10e4-4af7-9461-9cc3496d56bb" name="Default" comment="code cleanup">
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/cash-dispense-0.0.1-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/application.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/CashDispenseApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/configuration/ApplicationConfigurations.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/domain/CashDispenseResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/domain/CashDispenseResponsePage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/domain/UserResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/persistance/entity/UserEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/persistance/repository/UserRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/services/CashDispenseService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/services/UserService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/web/rest/DispenseRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/web/rest/UserRestController.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/configuration/ApplicationConfigurations.class" afterPath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/configuration/ApplicationConfigurations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/domain/CashDispenseResponsePage.class" afterPath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/domain/CashDispenseResponsePage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/services/CashDispenseService.class" afterPath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/services/CashDispenseService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/web/rest/DispenseRestController.class" afterPath="$PROJECT_DIR$/target/classes/za/connect/cashdispense/web/rest/DispenseRestController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/connect/cashdispense/domain/CashDispenseResponsePage.java" afterPath="$PROJECT_DIR$/src/main/java/za/connect/cashdispense/domain/CashDispenseResponsePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/connect/cashdispense/services/CashDispenseService.java" afterPath="$PROJECT_DIR$/src/main/java/za/connect/cashdispense/services/CashDispenseService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/za/connect/cashdispense/web/rest/DispenseRestController.java" afterPath="$PROJECT_DIR$/src/main/java/za/connect/cashdispense/web/rest/DispenseRestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/za/connect/cashdespense/CashDispenseUnitTest.java" afterPath="$PROJECT_DIR$/src/test/java/za/connect/cashdespense/CashDispenseUnitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/za/connect/cashdespense/UserServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/za/connect/cashdespense/UserServiceTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/za/connect/cashdispense/web/rest/DispenseRestController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+              <caret line="32" column="50" lean-forward="false" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/za/connect/cashdispense/domain/CashDispenseResponsePage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+              <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,21 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XmlSeeAlso.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/javax/xml/bind/annotation/XmlSeeAlso.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="76" column="18" lean-forward="false" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CashDispenseService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/za/connect/cashdispense/services/CashDispenseService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="615">
-              <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+              <caret line="45" column="13" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,15 +105,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplicationConfigurations.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApplicationConfigurations.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/za/connect/cashdispense/configuration/ApplicationConfigurations.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+              <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding>
                 <element signature="e#479#480#0" expanded="true" />
                 <element signature="e#527#528#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="83" column="4" lean-forward="false" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -283,96 +286,6 @@
             <path>
               <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
               <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cashdispense" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cashdispense" type="462c0819:PsiDirectoryNode" />
-              <item name="configuration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cashdispense" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cashdispense" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cashdispense" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cash-dispense" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cash-dispense" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cashdespense" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -638,7 +551,7 @@
       <workItem from="1511356717013" duration="596000" />
       <workItem from="1511386585639" duration="216000" />
       <workItem from="1511386992983" duration="43604000" />
-      <workItem from="1511848393069" duration="16639000" />
+      <workItem from="1511848393069" duration="17016000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1510923969688</created>
@@ -689,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511820598100</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="code cleanup">
+      <created>1511939455635</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1511939455635</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -725,7 +645,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61911000" />
+    <option name="totallyTimeSpent" value="62288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -807,7 +727,8 @@
     <MESSAGE value="formatting and code cleanup" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="changed dataType from Double to BigDecimal" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed dataType from Double to BigDecimal" />
+    <MESSAGE value="code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="code cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1122,7 +1043,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/za/connect/cashdispense/web/rest/DispenseRestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+          <caret line="32" column="50" lean-forward="false" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1140,7 +1061,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/za/connect/cashdispense/domain/CashDispenseResponsePage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1150,7 +1071,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/za/connect/cashdispense/services/CashDispenseService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
-          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+          <caret line="45" column="13" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1178,11 +1099,19 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/za/connect/cashdispense/configuration/ApplicationConfigurations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding>
             <element signature="e#479#480#0" expanded="true" />
             <element signature="e#527#528#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="83" column="4" lean-forward="false" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
