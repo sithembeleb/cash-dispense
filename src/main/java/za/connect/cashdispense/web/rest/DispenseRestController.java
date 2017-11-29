@@ -6,12 +6,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import za.connect.cashdispense.domain.CashDispenseResponse;
 import za.connect.cashdispense.domain.CashDispenseResponsePage;
 import za.connect.cashdispense.services.CashDispenseService;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 

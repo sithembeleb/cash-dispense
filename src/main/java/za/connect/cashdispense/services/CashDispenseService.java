@@ -8,14 +8,12 @@ import za.connect.cashdispense.domain.CashDispenseResponse;
 
 import javax.xml.bind.ValidationException;
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.OK;
 
 @Service
 public class CashDispenseService {
@@ -42,7 +40,7 @@ public class CashDispenseService {
                 throw new ValidationException("Amount due must be less that randNote");
             }
 
-            if (!validDenominations.stream().filter(denomination -> denomination.compareTo(BigDecimal.TEN) == 1)
+            if (!validDenominations.stream().filter(denomination -> denomination.compareTo(BigDecimal.TEN) == 0 || denomination.compareTo(BigDecimal.TEN) == 1)
                     .collect(Collectors.toList()).contains(randNote)) {
                 throw new ValidationException("Please provide a valid note denomination");
             }
@@ -57,8 +55,8 @@ public class CashDispenseService {
             }
         } catch (ValidationException e) {
             logger.error(e.getMessage());
-            return new CashDispenseResponsePage(new ArrayList<>(), e.getMessage(), BAD_REQUEST.toString());
+            return new CashDispenseResponsePage(new ArrayList<>(), e.getMessage(), BAD_REQUEST.toString(), change);
         }
-        return new CashDispenseResponsePage(denominationBreakdown, null, null);
+        return new CashDispenseResponsePage(denominationBreakdown, null, null, change);
     }
 }
