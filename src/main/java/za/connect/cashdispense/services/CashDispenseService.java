@@ -40,8 +40,7 @@ public class CashDispenseService {
                 throw new ValidationException("Amount due must be less that randNote");
             }
 
-            if (!validDenominations.stream().filter(denomination -> denomination.compareTo(BigDecimal.TEN) == 0 || denomination.compareTo(BigDecimal.TEN) == 1)
-                    .collect(Collectors.toList()).contains(randNote)) {
+            if (!randNote.remainder(BigDecimal.TEN).equals(BigDecimal.ZERO)){
                 throw new ValidationException("Please provide a valid note denomination");
             }
 
