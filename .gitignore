@@ -9,6 +9,8 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+mvnw
+mvnw.cmd
 
 # From: https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
 
