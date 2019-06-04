@@ -2,6 +2,7 @@ package za.connect.cashdispense.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import za.connect.cashdispense.domain.CashDispenseResponsePage;
 import za.connect.cashdispense.domain.CashDispenseResponse;
@@ -13,15 +14,15 @@ import java.text.NumberFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
+import static org.springframework.http.HttpStatus.*;
 
 @Service
 public class CashDispenseService {
 
-    final static BigDecimal[] validCashDenominations = {new BigDecimal(100.00), new BigDecimal(50.00), new BigDecimal(20.00),
+    private final static BigDecimal[] validCashDenominations = {new BigDecimal(100.00), new BigDecimal(50.00), new BigDecimal(20.00),
             new BigDecimal(10.00), new BigDecimal(5.00), new BigDecimal(2.00), new BigDecimal(1.00), new BigDecimal(0.50),
             new BigDecimal(0.20), new BigDecimal(0.10), new BigDecimal(0.05)};
-    final static Logger logger = LoggerFactory.getLogger(CashDispenseService.class);
+    private final static Logger logger = LoggerFactory.getLogger(CashDispenseService.class);
 
     public CashDispenseResponsePage getDispensedBreakdown(final BigDecimal randNote, final BigDecimal amountDue) {
         List<CashDispenseResponse> denominationBreakdown = new ArrayList<>();
@@ -56,6 +57,6 @@ public class CashDispenseService {
             logger.error(e.getMessage());
             return new CashDispenseResponsePage(new ArrayList<>(), e.getMessage(), BAD_REQUEST.toString(), change);
         }
-        return new CashDispenseResponsePage(denominationBreakdown, null, null, change);
+        return new CashDispenseResponsePage(denominationBreakdown, null, OK.toString(), change);
     }
 }
